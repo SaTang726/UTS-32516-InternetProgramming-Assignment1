@@ -4,21 +4,21 @@
     <title>Xu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script src="jquery/jquery-1.12.2.min.js"></script>
-    <script src="js/search.js"></script>
-    <link rel="stylesheet" href="bootstrap-3.3.6/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="bootstrap-3.3.6/css/bootstrap-theme.min.css"/>
-    <script src="bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script src="../additon/jquery/jquery-1.12.2.min.js"></script>
+    <script src="../additon/js/search.js"></script>
+    <link rel="stylesheet" href="../additon/bootstrap-3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../additon/bootstrap-3.3.6/css/bootstrap-theme.min.css"/>
+    <script src="../additon/bootstrap-3.3.6/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
 <div class="container" align="center">
     <nav class="navbar">
-        <a href="index.html">Home</a>
+        <a href="../index.html">Home</a>
         <a href="search.html">Search Flight</a>
-        <a href="booking.php">Your Bookings</a>
-        <a href="contact.html">Contact</a>
+        <a href="../booking/booking.php">Your Bookings</a>
+        <a href="../contact/contact.html">Contact</a>
     </nav>
 </div>
 
@@ -65,6 +65,6 @@
     <br>
     <button name="back_to_search" class="btn btn-default" onclick="location.href='search.html'">< New Search</button>
     &nbsp;&nbsp;&nbsp;
-    <button name="booking" class="btn btn-default" onclick="location.href='booking.php'">Make Booking for selected flight</button>
+    <button name="booking" class="btn btn-default" onclick="location.href='../booking/booking.php'">Make Booking for selected flight</button>
 </body>
 </html>

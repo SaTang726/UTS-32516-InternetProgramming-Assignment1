@@ -4,18 +4,18 @@
     <title>Xu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script src="../additon/jquery/jquery-1.12.2.min.js"></script>
-    <script src="../additon/js/search.js"></script>
-    <link rel="stylesheet" href="../additon/bootstrap-3.3.6/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../additon/bootstrap-3.3.6/css/bootstrap-theme.min.css"/>
-    <script src="../additon/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script src="../addition/jquery/jquery-1.12.2.min.js"></script>
+    <script src="../addition/js/search.js"></script>
+    <link rel="stylesheet" href="../addition/bootstrap-3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../addition/bootstrap-3.3.6/css/bootstrap-theme.min.css"/>
+    <script src="../addition/bootstrap-3.3.6/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
 <div class="container" align="center">
     <nav class="navbar">
-        <a href="../index.html">Home</a>
+        <a href="../index.php">Home</a>
         <a href="search.html">Search Flight</a>
         <a href="../booking/booking.php">Your Bookings</a>
         <a href="../contact/contact.html">Contact</a>

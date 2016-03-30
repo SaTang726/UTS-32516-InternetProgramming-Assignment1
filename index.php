@@ -24,15 +24,15 @@ require "nav.html";
 
     <table align="center">
         <tr>
-            <td colspan="2" align="center"><b>Group Member</b></td>
+            <td colspan="2"><b>Group Member</b></td>
         </tr>
         <tr>
-            <td>11876051</td>
-            <td>Xu Chen</td>
+            <td width="80px">11876051</td>
+            <td width="80px">Xu Chen</td>
         </tr>
         <tr>
-            <td>11584810</td>
-            <td>Gu Yang</td>
+            <td width="80px">11584810</td>
+            <td width="80px">Gu Yang</td>
         </tr>
     </table>
 </div>

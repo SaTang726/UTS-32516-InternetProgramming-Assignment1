@@ -7,12 +7,6 @@
     <?php
     require "../head.html";
     ?>
-    <style>
-        table{
-            padding-bottom: 10px;
-            border-spacing: 10px;
-        }
-    </style>
 </head>
 
 <body>
@@ -20,12 +14,6 @@
 <?php
 require "../nav.html";
 ?>
-
-<div align="center">
-    <?php
-        require "booking_refresh.php";
-    ?>
-</div>
 
 </body>
 </html>

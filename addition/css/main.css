@@ -3,3 +3,12 @@ table, thead, tr, td, th {
     text-align: center;
 }
 
+
+table, form, button {
+    font-size: 13px;
+}
+
+ul, li {
+    font-family: inherit;
+    font-size:inherit;
+}

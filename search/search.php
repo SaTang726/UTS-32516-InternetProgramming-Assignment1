@@ -7,19 +7,48 @@
     <?php
     require "../head.html";
     ?>
+    <script src="search.js"></script>
+    <script src="../addition/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../addition/jquery-ui-1.11.4.custom/jquery-ui.min.css"/>
+    <script>
+        $(document).ready(function () {
+           $("input").autocomplete({
+               source : function (request, response) {
+                   $.ajax({
+                       url : "auto_complete.php",
+                       dataType : "text",
+                       data : "query=" + request.term,
+                       success : function (data, textStatus, jqXHR) {
+                           console.log(request);
+                           data = data.split(",");
+                           response(data);
+                       },
+                       error: function (msg) {
+                           alert(msg.status + ' ' + msg.statusText);
+                       }
+                   });
+               },
+               delay : 500,
+               width : 105
+           });
+        });
+    </script>
+
 </head>
 
 <body>
+<div id="test">
 
+</div>
 <?php
 require "../nav.html";
 ?>
 
 <div class="input" align="center">
-    <form name="search" method="get" action="search_show.php">
-        From City: <input name="from_city" type="text" size="20" autofocus/>&nbsp;&nbsp;
-        To City: <input name="to_city" type="text" size="20" />&nbsp;&nbsp;
-        <input class="btn btn-default" type="submit" value="Search!"/>
+    <form name="search" method="get" onsubmit="return search_atLeastOneCityandCityIsCorrect()" action="search_show.php">
+        From City: <input id="from_city" name="from_city" type="text" width="200px" autocomplete="off" />&nbsp;&nbsp;
+        To City: <input id="to_city" name="to_city" type="text" width="200px" autocomplete="off"/>&nbsp;&nbsp;
+        <input type="submit" value="Search!"/>
     </form>
 </div>
 

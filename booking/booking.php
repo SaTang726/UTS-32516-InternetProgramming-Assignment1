@@ -2,17 +2,11 @@
 <html>
 <head>
     <title>Xu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <?php
     require "../head.html";
     ?>
-    <style>
-        table{
-            padding-bottom: 10px;
-            border-spacing: 10px;
-        }
-    </style>
+    <script src="booking.js"></script>
 </head>
 
 <body>
@@ -21,11 +15,8 @@
 require "../nav.html";
 ?>
 
-<div align="center">
-    <?php
-        require "booking_refresh.php";
-    ?>
-</div>
-
+<?php
+    require "booking_refresh.php";
+?>
 </body>
 </html>

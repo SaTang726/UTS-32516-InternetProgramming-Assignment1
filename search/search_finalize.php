@@ -49,4 +49,4 @@ $_SESSION['flights_index'] = $flights_index;
 
 //print_r($flights);
 
-header("Location: ../booking/booking.php");
+header("Location: ../search/search_result.php");

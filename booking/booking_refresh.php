@@ -9,19 +9,21 @@
     session_start();
     $flights = $_SESSION['flights'];
 
+echo '<div align="center">';
     if (!empty($flights)) {
         $length = count($flights);
 
         ?>
+        <form id="form" name="form" method="get" onsubmit="return checkNum();" action="booking_delete.php">
         <table>
         <tr>
         <th width="80px">Departure</th>
-        <th width="30px" >Count</th>
         <th width="80px" >Arrival</th>
         <th width="80px" >Price</th>
         <th width="100px" >Child</th>
         <th width="100px" >Wheelchair</th>
         <th width="100px">Special Diet</th>
+        <th width="50px">Select</th>
         </tr>
         <?php
         for ($count = 0; $count < $length; $count++) {
@@ -31,21 +33,22 @@
             }
             echo '<tr>';
             echo '<td width="80px">'.$fli[1].'</td>';
-            echo '<td width="30px">'.$count.'</td>';
             echo '<td width="80px">'.$fli[2].'</td>';
-            echo '<td width="80px">'.$fli[3].'</td>';
+            echo '<td width="80px">$'.$fli[3].'</td>';
             echo '<td width="100px">'.$fli['child'].'</td>';
             echo '<td width="100px">'.$fli['wheel'].'</td>';
             echo '<td width="100px">'.$fli['diet'].'</td>';
+            echo '<td width="50px"><input type="checkbox" name="select[]" value="'.$count.'"/> </td>';
             echo '</tr>';
         }
-        ?>
-        </table>
-        <div>
-            <button type="button" onclick="location.href='../checkout/checkout.php'">Proceed to Checkout</button>
-        </div>
-        <?php
-        
+        echo '</form>';
+        //print_r($flights);
+        echo '</table>';
+        echo '<div>';
+        echo '<button form="form" type="submit">Delete selected Flights</button>';
+        echo '<button type="button" onclick="location.href=\'../checkout/checkout.php\'">Proceed to Checkout</button>';
+        echo '</div>';
     } else {
-        echo 'You have no bookings.';
+        echo '<b><p>You have no bookings.</p></b>';
     }
+echo '</div>';

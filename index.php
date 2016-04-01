@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Xu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
 
     <?php
     require "head.html";
@@ -16,9 +16,7 @@ require "nav.html";
 ?>
 
 <div>
-    <br><br>
     <h1 align="center">This website is for 32516 Internet Programming</h1>
-    <br>
     <h1 align="center">Assignment one</h1>
     <br>
 

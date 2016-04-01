@@ -7,6 +7,7 @@
     <?php
     require "../head.html";
     ?>
+    <script src="search_confirm.js"></script>
 </head>
 <body>
 
@@ -22,9 +23,10 @@ $_SESSION['choose_flight'] = $choose_checkbox;
 ?>
 
 <div align="center">
-    <form method="get" action="search_finalize.php">
+    <form method="get" onsubmit="return checkNum();" action="search_finalize.php">
         <table>
             <tr>
+            <th width="80px">Seat No.</th>
             <th width="80px">Departure</th>
             <th width="30px" ></th>
             <th width="80px" >Arrival</th>
@@ -36,20 +38,22 @@ $_SESSION['choose_flight'] = $choose_checkbox;
             </tr>
             <?php
                 for ($count = 0; $count < 5; $count++) {
+                    $seat = $count+1;
                     echo '<tr>';
+                    echo '<td width="80px" >'.$seat.'</td>';
                     echo '<td width="80px" >'.$choose_checkbox[1].'</td>';
                     echo '<td width="30px" > To </td>';
                     echo '<td width="80px" >'.$choose_checkbox[2].'</td>';
                     echo '<td width="80px" >$'.$choose_checkbox[3].'</td>';
-                    echo '<td width="80px" ><input type="checkbox" name="select[]" value="'.$count.'"/></td>';
-                    echo '<td width="50px" ><input type="checkbox" name="child[]" value="'.$count.'"/></td>';
-                    echo '<td width="80px" ><input type="checkbox" name="wheel[]" value="'.$count.'"/></td>';
-                    echo '<td width="100px"><input type="checkbox" name="diet[]" value="'.$count.'"/></td>';
+                    echo '<td width="80px" ><input onclick="changeState(this)" type="checkbox" name="select[]" value="'.$count.'"/></td>';
+                    echo '<td width="50px" ><input type="checkbox" name="child[]" disabled="disabled" value="'.$count.'"/></td>';
+                    echo '<td width="80px" ><input type="checkbox" name="wheel[]" disabled="disabled" value="'.$count.'"/></td>';
+                    echo '<td width="100px"><input type="checkbox" name="diet[]" disabled="disabled" value="'.$count.'"/></td>';
                     echo '</tr>';
                 }
             ?>
         </table>
-        <input type="submit" value="submit"/>
+        <input type="submit" value="Add to Bookings"/>
     </form>
 </div>
 

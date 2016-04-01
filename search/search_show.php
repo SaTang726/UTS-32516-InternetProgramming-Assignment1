@@ -7,7 +7,7 @@
     <?php
     require "../head.html";
     ?>
-    <script src="../addition/js/search.js"></script>
+    <script src="search_show.js"></script>
 </head>
 
 <body>
@@ -48,7 +48,7 @@ require "../nav.html";
         $num_rows = mysql_num_rows($result);
         if ($num_rows > 0) {
             ?>
-            <form id="form" name="form" method="get" action="search_confirm.php"><table>
+            <form id="form" name="form" method="get" onsubmit="return choose_at_list_one();" action="search_confirm.php"><table>
             <?php
             //create a array to store all the result for temporary
             $tmp_flights = array();
@@ -60,7 +60,7 @@ require "../nav.html";
                 echo '<td width="30px"> To </td>';
                 echo '<td width="80px">'.$a_row[2].'</td>';
                 echo '<td width="80px">$'.$a_row[3].'</td>';
-                echo '<td><input type="checkbox" name="checkbox" value="'.$a_row[0].'"/></td>';
+                echo '<td><input type="checkbox" name="checkbox" onclick="uncheckOtherCheckBox(this)" value="'.$a_row[0].'"/></td>';
                 echo '</tr>';
             }
             
@@ -71,16 +71,16 @@ require "../nav.html";
             </form>
             <?php
         } else {
-            echo "No result returned";
+            echo "No such a flight.";
         }
     ?>
     </div>
 
     <div align="center">
         <br>
-        <button name="back_to_search" class="btn btn-default" onclick="location.href='search.php'">< New Search</button>
+        <button name="back_to_search" onclick="location.href='search.php'">< New Search</button>
         &nbsp;&nbsp;&nbsp;
-        <button name="confirm" form="form" type="submit" class="btn btn-default">Make Booking for selected flight</button>
+        <button name="confirm" form="form" type="submit">Make Booking for selected flight</button>
     </div>
 </body>
 </html>

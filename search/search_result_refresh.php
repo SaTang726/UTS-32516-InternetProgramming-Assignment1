@@ -13,7 +13,7 @@
         $length = count($flights);
 
         ?>
-        <table>
+        <table id="flight">
         <tr>
         <th width="80px">Departure</th>
         <th width="80px" >Arrival</th>

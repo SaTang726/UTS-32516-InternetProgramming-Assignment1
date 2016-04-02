@@ -33,8 +33,8 @@ if (empty($first_name) && empty($last_name)) {
     $hi_msg = $hi_msg.' Sir/Madam';
 }
 $hi_msg = $hi_msg.':
-This email is sent from XC';
-print_r($hi_msg);
+';
+//print_r($hi_msg);
 
 mail($address, $subject, $message, $hi_msg);
 ?>

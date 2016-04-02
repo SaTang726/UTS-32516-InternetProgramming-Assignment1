@@ -22,17 +22,21 @@
             }, "Need some valid words");
 
             jQuery.validator.addMethod("isAddress", function (value, element) {
-                var reg = /^( |[a-zA-Z]|[0-9])+$/;
+                var reg = /^( |[a-zA-Z]|[0-9]|\.|\-)+$/;
                 return this.optional(element) || (reg.test(value));
             }, "Need valid words and numbers");
 
             jQuery.validator.addMethod("isPostcode", function (value, element) {
+                if (element.required == false) {
+                    return true;
+                }
+
                 var reg = /^[0-9]{4}$/;
                 return this.optional(element) || (reg.test(value));
             }, "Need valid 4 numbers postcode.");
 
             jQuery.validator.addMethod("isEmail", function (value, element) {
-                var reg = /^([0-9]|[a-zA-Z])+@([0-9]|[a-zA-z])+(\.([0-9]|[a-zA-Z]))+$/;
+                var reg = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
                 return this.optional(element) || (reg.test(value));
             }, "Need valid email.");
 
@@ -51,13 +55,14 @@
                         isAddress : true
                     },
                     suburb : {
-                        isWord: true
+                        isWords: true
                     },
                     state : {
                         isWords : true
                     },
                     postcode : {
-                        isPostcode : true
+                        isPostcode : true,
+                        digits : true
                     },
                     country : {
                         isWords : true
@@ -97,7 +102,7 @@ require "../nav.html";
 ?>
 
 <div align="center">
-    <form id="form1" method="get" onsubmit="return validate();" action="payment.php">
+    <form id="form1" method="get" action="payment.php">
         <table border="0px">
             <tr>
                 <th></th>

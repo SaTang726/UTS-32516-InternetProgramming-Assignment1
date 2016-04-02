@@ -85,7 +85,13 @@ require "../nav.html";
 session_start();
 $_SESSION['given_name'] = $_REQUEST['given_name'];
 $_SESSION['family_name'] = $_REQUEST['family_name'];
-$address;
+
+$_SESSION['address_line1'] = $_REQUEST['address_line1'];
+$address_line2 = $_REQUEST['address_line2'];
+if (!empty($address_line2)) {
+    $_SESSION['address_line2'] = $address_line2;
+}
+
 $_SESSION['email'] = $_REQUEST['email'];
 
 ?>

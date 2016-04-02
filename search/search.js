@@ -12,12 +12,12 @@ function search_atLeastOneCityandCityIsCorrect() {
         return false;
     }
 
-    if (city1 != "" && !isValidateCity(city1)) {
+    if (city1 != "" && !isValidCity1(city1)) {
         alert("From City is wrong");
         return false;
     }
 
-    if (city2 != "" && !isValidateCity(city2)) {
+    if (city2 != "" && !isValidCity1(city2)) {
         alert("To City is wrong");
         return false;
     }
@@ -25,12 +25,30 @@ function search_atLeastOneCityandCityIsCorrect() {
     return true;
 }
 
-function isValidateCity(city) {
-    for (var i = 0; i < CITIES.length; i++) {
-        if (CITIES[i] == city)
-            return true;
-    }
-    return false;
+function isValidCity0(city) {
+    var flag = false;
+
+    cities.forEach(function (array) {
+        array.forEach(function (e) {
+            if (e == city) {
+                flag = true;
+            }
+        });
+    });
+
+    return flag;
+}
+
+function isValidCity1(city) {
+    var flag = false;
+
+    CITIES.forEach(function (e) {
+        if (e == city) {
+            flag = true;
+        }
+    });
+
+    return flag;
 }
 
 CITIES = ["Sydney",

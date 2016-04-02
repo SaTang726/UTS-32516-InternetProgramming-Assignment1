@@ -8,45 +8,27 @@
     require "../head.html";
     ?>
     <script src="../addition/jquery-validation-1.15.0/dist/jquery.validate.min.js"></script>
-    <script src="payment.js"></script>
+    <script src="../addition/js/validator.js"
     <script>
-        $(function () {
-            jQuery.validator.addMethod("isCreditCardType", function (value, element) {
-                var flag = false;
-                var types = ["Visa", "Diners", "Mastercard", "Amex"];
-                for (var count = 0; count < types.length; count++) {
-                    if (types[count] == value) {
-                        flag = true;
-                    }
+        function checkDate() {
+            var year = document.getElementById("credit_card_expire_year").value.trim();
+            var month = document.getElementById("credit_card_expire_month").value.trim();
+
+            var today = new Date();
+            var current_month = today.getMonth() + 1;
+
+            if (year == 16) {
+                if (current_month >= month) {
+                    alert("Your credit card is expired.");
+                    return false;
                 }
+            }
 
-                return this.optional(element) || (flag);
-            }, "(Visa, Diners, Mastercard, Amex)");
-
-            jQuery.validator.addMethod("isCreditCardNumber", function (value, element) {
-                var reg = /^[0-9]{12}$/;
-                return this.optional(element) || (reg.test(value));
-            }, "Need a valid 12 card numbers.");
-
-            jQuery.validator.addMethod("isWords", function (value, element) {
-                var reg = /^( |[a-zA-Z])+$/;
-                return this.optional(element) || (reg.test(value));
-            }, "Need some valid words.");
-
-            jQuery.validator.addMethod("isMonth", function (value, element) {
-                var reg = /^([1-9]|(10|11|12))$/;
-                return this.optional(element) || (reg.test(value));
-            }, "Need valid month (1 ~ 12).");
-
-            jQuery.validator.addMethod("isYear", function (value, element) {
-                var reg = /^((1[6-9])|([2-9][0-9]))$/;
-                return this.optional(element) || (reg.test(value));
-            }, "Need valid year (16 ~ 99).");
-
-            jQuery.validator.addMethod("isSecurityCode", function (value, element) {
-                var reg = /^[0-9]{3}$/;
-                return this.optional(element) || (reg.test(value));
-            }, "Security Code is three numbers.");
+            return true;
+        }
+        
+        $(function () {
+            customedValidator();
 
             $("#form1").validate({
                 rules : {

@@ -6,7 +6,22 @@
     <?php
     require "../head.html";
     ?>
-    <script src="booking.js"></script>
+    <script>
+        function checkNum() {
+            var total = 0;
+            $("input[name='select[]']").each(function () {
+                if (this.checked == true) {
+                    total++;
+                }
+            });
+
+            if (total == 0) {
+                alert("Please choose at least one row.");
+            }
+
+            return total > 0;
+        }
+    </script>
 </head>
 
 <body>

@@ -7,7 +7,30 @@
     <?php
     require "../head.html";
     ?>
-    <script src="search_show.js"></script>
+    <script>
+        function uncheckOtherCheckBox(chosen) {
+            $("input[name='checkbox']").each(function () {
+                if (this != chosen) {
+                    $(this).attr("checked", false);
+                }
+            });
+        }
+
+        function choose_at_list_one() {
+            var total = 0;
+            $("input[name='checkbox']").each(function () {
+                if (this.checked == true) {
+                    total++;
+                }
+            });
+
+            if (total == 0) {
+                alert("Please choose at least one row.");
+            }
+
+            return total > 0;
+        }
+    </script>
 </head>
 
 <body>

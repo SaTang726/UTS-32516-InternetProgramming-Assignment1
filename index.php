@@ -15,7 +15,7 @@
 require "nav.html";
 ?>
 
-<div>
+<div align="center">
     <h1 align="center">This website is for 32516 Internet Programming</h1>
     <h1 align="center">Assignment one</h1>
     <br>
@@ -34,6 +34,34 @@ require "nav.html";
         </tr>
     </table>
 </div>
+
+<br><br>
+<div align="center">
+    <label for="package">Package References</label>
+    <table id="package">
+        <tr>
+            <th>Package Name</th>
+            <th>Version</th>
+            <th>License</th>
+        </tr>
+        <tr>
+            <td>jQuery</td>
+            <td>1.12.2</td>
+            <td>MIT License</td>
+        </tr>
+        <tr>
+            <td>jQuery UI</td>
+            <td>1.11.4</td>
+            <td>MIT License</td>
+        </tr>
+        <tr>
+            <td>jQuery Validation</td>
+            <td>1.15.0</td>
+            <td>MIT License</td>
+        </tr>
+    </table>
+</div>
+
 </body>
 
 </html>

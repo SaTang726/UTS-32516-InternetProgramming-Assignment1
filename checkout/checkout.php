@@ -8,37 +8,30 @@
     require "../head.html";
     ?>
     <script src="../addition/jquery-validation-1.15.0/dist/jquery.validate.min.js"></script>
-    <script src="checkout.js"></script>
+    <script src="../addition/js/validator.js"></script>
     <script>
+        var isAustralia = false;
+
+        function checkCountry(country) {
+            if (country.value != "Australia" && isAustralia) {
+                isAustralia = false;
+
+                $("#state").attr("required", false);
+                $("#postcode").attr("required", false);
+                document.getElementById("red_state").innerText = "optional";
+                document.getElementById("red_postcode").innerText = "optional";
+            } else if (country.value == "Australia" && !isAustralia) {
+                isAustralia = true;
+
+                $("#state").attr("required", true);
+                $("#postcode").attr("required", true);
+                document.getElementById("red_state").innerText = "*";
+                document.getElementById("red_postcode").innerText = "*";
+            }
+        }
+        
         $(function () {
-            jQuery.validator.addMethod("isWord", function (value, element) {
-                var reg = /^[a-zA-Z]+$/;
-                return this.optional(element) || (reg.test(value));
-            }, "Need a valid word");
-
-            jQuery.validator.addMethod("isWords", function (value, element) {
-                var reg = /^( |[a-zA-Z])+$/;
-                return this.optional(element) || (reg.test(value));
-            }, "Need some valid words");
-
-            jQuery.validator.addMethod("isAddress", function (value, element) {
-                var reg = /^( |[a-zA-Z]|[0-9]|\.|\-)+$/;
-                return this.optional(element) || (reg.test(value));
-            }, "Need valid words and numbers");
-
-            jQuery.validator.addMethod("isPostcode", function (value, element) {
-                if (element.required == false) {
-                    return true;
-                }
-
-                var reg = /^[0-9]{4}$/;
-                return this.optional(element) || (reg.test(value));
-            }, "Need valid 4 numbers postcode.");
-
-            jQuery.validator.addMethod("isEmail", function (value, element) {
-                var reg = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
-                return this.optional(element) || (reg.test(value));
-            }, "Need valid email.");
+            customedValidator();
 
             $("#form1").validate({
                 rules : {
@@ -83,9 +76,6 @@
                 errorElement : "td",
                 errorPlacement : function (error, element) {
                     error.appendTo(element.parent().parent());
-                },
-                message : {
-
                 }
             });
         });

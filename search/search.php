@@ -11,6 +11,8 @@
     <script src="../addition/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="../addition/jquery-ui-1.11.4.custom/jquery-ui.min.css"/>
     <script>
+        var cities = [];
+
         $(document).ready(function () {
            $("input").autocomplete({
                source : function (request, response) {
@@ -19,8 +21,8 @@
                        dataType : "text",
                        data : "query=" + request.term,
                        success : function (data, textStatus, jqXHR) {
-                           console.log(request);
                            data = data.split(",");
+                           cities.push(data);
                            response(data);
                        },
                        error: function (msg) {

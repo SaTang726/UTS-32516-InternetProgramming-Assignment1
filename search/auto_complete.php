@@ -4,15 +4,26 @@
  * User: Xu
  * Date: 30/03/2016
  * Time: 9:35 PM
+ *
+ * Input message type: query=$city_type-$word
+ * $_REQUEST['query'] to get message
+ * $city_type: from_city or to_city
+ * $word: which need to query
+ *
+ * Output message type $result, $result, $result
+ * separate by ","   not in the begin and end
  */
-header('Content-Type: application/json');
 
-$sql_query = "SELECT DISTINCT from_city FROM flights WHERE from_city like'".$_REQUEST['query']."%'";
+header('Content-Type: application/text');
+$msg = $_REQUEST['query'];
+$msg = explode("-", $msg);
+
+$sql_query = "SELECT DISTINCT ".$msg[0]." FROM flights WHERE ".$msg[0]." like'".$msg[1]."%'";
 
 $link = mysql_connect("rerun", "potiro", "pcXZb(kL");
 
 if (!$link)
-    die("Could not connect to server");
+    die("error!");
 
 mysql_select_db("poti", $link);
 $result = mysql_query($sql_query);

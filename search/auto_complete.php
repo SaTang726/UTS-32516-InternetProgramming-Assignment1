@@ -14,7 +14,8 @@
  * separate by ","   not in the begin and end
  */
 
-header('Content-Type: application/text');
+header('Content-Type: application/json');
+
 $msg = $_REQUEST['query'];
 $msg = explode("-", $msg);
 

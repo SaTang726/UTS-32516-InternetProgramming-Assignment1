@@ -24,19 +24,22 @@ foreach ($select as $seat) {
     $tmp = $flight_info;
 
     if (in_array($seat, $child)) {
-        $tmp['child'] = '*';
+        //$tmp['child'] = '*';
+        $tmp['child'] = '&radic;';
     } else {
         $tmp['child'] = '';
     }
 
     if (in_array($seat, $wheel)) {
-        $tmp['wheel'] = '*';
+        //$tmp['wheel'] = '*';
+        $tmp['wheel'] = '&radic;';
     } else {
         $tmp['wheel'] = '';
     }
 
     if (in_array($seat, $diet)) {
-        $tmp['diet'] = '*';
+        //$tmp['diet'] = '*';
+        $tmp['diet'] = '&radic;';
     } else {
         $tmp['diet'] = '';
     }

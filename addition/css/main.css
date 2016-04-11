@@ -1,7 +1,10 @@
-table, thead, tr, td, th {
+div{
     text-align: center;
 }
 
+table {
+    margin: auto;
+}
 
 table, form, button {
     font-size: 13px;

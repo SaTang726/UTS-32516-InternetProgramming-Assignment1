@@ -11,7 +11,7 @@
 
     if (!empty($flights)) {
         $length = count($flights);
-
+        $total_cost = 0;
         ?>
         <table id="flight">
         <tr>
@@ -36,9 +36,16 @@
             echo '<td width="100px">'.$fli['wheel'].'</td>';
             echo '<td width="100px">'.$fli['diet'].'</td>';
             echo '</tr>';
+            $total_cost += $fli[3];
         }
         ?>
         </table>
+        <div>
+            <p><?php
+                echo 'Total: '.$count.' Flights<br>Total cost: $'.$total_cost;
+                ?>
+            </p>
+        </div>
 
         <?php
         

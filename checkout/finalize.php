@@ -38,18 +38,19 @@ $subject = 'Flight Travel Receipt';
 $flights = $_SESSION['flights'];
 $length = count($flights);
 $flight_msg = '';
+
 for ($count = 0; $count < $length; $count++){
     $fli = $flights[$count];
     if (empty($fli)) { continue; }
     $flight_msg .= $fli[1].'      '.$fli[2].'      $'.$fli[3];
 
-    if ($fli['child'] == "*") {
+    if ($fli['child'] == "&radic;") {
         $flight_msg .= '      Child';
     }
-    if ($fli['wheel'] == "*") {
+    if ($fli['wheel'] == "&radic;") {
         $flight_msg .= '      Wheelchair';
     }
-    if ($fli['diet'] == "*") {
+    if ($fli['diet'] == "&radic;") {
         $flight_msg .= '      SpecialDiet';
     }
 

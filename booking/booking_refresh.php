@@ -9,7 +9,7 @@
     session_start();
     $flights = $_SESSION['flights'];
 
-echo '<div align="center">';
+echo '<div>';
     if (!empty($flights)) {
         $length = count($flights);
 
@@ -26,6 +26,7 @@ echo '<div align="center">';
         <th width="50px">Select</th>
         </tr>
         <?php
+        $total_cost = 0;
         for ($count = 0; $count < $length; $count++) {
             $fli = $flights[$count];
             if (empty($fli)) {
@@ -40,10 +41,14 @@ echo '<div align="center">';
             echo '<td width="100px">'.$fli['diet'].'</td>';
             echo '<td width="50px"><input type="checkbox" name="select[]" value="'.$count.'"/> </td>';
             echo '</tr>';
+            $total_cost += $fli[3];
         }
         echo '</form>';
         //print_r($flights);
         echo '</table>';
+        echo '<div>
+                <p>Total : '.$length.' flights<br>Total cost: $'.$total_cost.'</p>
+              </div>';
         echo '<div>';
         echo '<button form="form" type="submit">Delete selected Flights</button>';
         echo '<button type="button" onclick="location.href=\'../checkout/checkout.php\'">Proceed to Checkout</button>';

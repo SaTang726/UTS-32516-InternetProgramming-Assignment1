@@ -8,25 +8,9 @@
     require "../head.html";
     ?>
     <script src="../addition/jquery-validation-1.15.0/dist/jquery.validate.min.js"></script>
-    <script src="../addition/js/validator.js"
+    <script src="../addition/js/validator.js"></script>
+
     <script>
-        function checkDate() {
-            var year = document.getElementById("credit_card_expire_year").value.trim();
-            var month = document.getElementById("credit_card_expire_month").value.trim();
-
-            var today = new Date();
-            var current_month = today.getMonth() + 1;
-
-            if (year == 16) {
-                if (current_month >= month) {
-                    alert("Your credit card is expired.");
-                    return false;
-                }
-            }
-
-            return true;
-        }
-        
         $(function () {
             customedValidator();
 
@@ -57,6 +41,23 @@
                 }
             });
         });
+
+        function checkDate() {
+            var year = document.getElementById("credit_card_expire_year").value.trim();
+            var month = document.getElementById("credit_card_expire_month").value.trim();
+
+            var today = new Date();
+            var current_month = today.getMonth() + 1;
+
+            if (year == 16) {
+                if (current_month >= month) {
+                    alert("Your credit card is expired.");
+                    return false;
+                }
+            }
+
+            return true;
+        }
     </script>
 </head>
 <body>

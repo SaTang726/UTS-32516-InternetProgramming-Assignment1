@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
     <?php
     require "../head.html";
     ?>
@@ -14,10 +11,11 @@ require "../nav.html";
 ?>
 
 <?php
-print_r($_REQUEST);
+//print_r($_REQUEST);
 $address = $_REQUEST['email'];
 $subject = $_REQUEST['subject'];
-$message = $_REQUEST['content'];
+//$message = $_REQUEST['content'];
+$message = "Your query is received.";
 
 $first_name = $_REQUEST['first_name'];
 $last_name = $_REQUEST['last_name'];

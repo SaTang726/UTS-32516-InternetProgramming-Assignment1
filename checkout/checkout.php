@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
     <?php
     require "../head.html";
     ?>
@@ -92,15 +89,9 @@ require "../nav.html";
 ?>
 
 <div align="center">
+    <label for="form1" >Complete Booking - stage 1 of 4 - Personal Details</label>
     <form id="form1" method="get" action="payment.php">
         <table border="0px">
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th width="280px"></th>
-            </tr>
             <tr>
                 <td>Given Name:</td>
                 <td><input id="given_name" type="text" name="given_name" required></td>

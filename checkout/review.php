@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
     <?php
     require "../head.html";
     ?>
@@ -17,6 +14,8 @@ require "../nav.html";
 <?php
 session_start();
 ?>
+    <label for="personal">Stage 3 of 4 - Review Details</label>
+    <br>
     <label for="personal">Personal Details</label>
     <table id="personal">
         <tr>
@@ -44,7 +43,7 @@ session_start();
         </tr>
         <tr>
             <td></td>
-            <td>Credit Card details supplied.</td>
+            <td style="color: greenyellow;">Credit Card details supplied.</td>
         </tr>
     </table><br><br>
 

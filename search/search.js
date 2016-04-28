@@ -12,12 +12,12 @@ function search_atLeastOneCityandCityIsCorrect() {
         return false;
     }
 
-    if (city1 != "" && !isValidCity1(city1)) {
+    if (city1 != "" && !isValidCity0(city1, CITY["from_city"])) {
         alert("From City is wrong");
         return false;
     }
 
-    if (city2 != "" && !isValidCity1(city2)) {
+    if (city2 != "" && !isValidCity0(city2, CITY["to_city"])) {
         alert("To City is wrong");
         return false;
     }
@@ -25,7 +25,7 @@ function search_atLeastOneCityandCityIsCorrect() {
     return true;
 }
 
-function isValidCity0(city) {
+function isValidCity0(city, cities) {
     var flag = false;
 
     cities.forEach(function (array) {
@@ -39,35 +39,3 @@ function isValidCity0(city) {
     return flag;
 }
 
-function isValidCity1(city) {
-    var flag = false;
-
-    CITIES.forEach(function (e) {
-        if (e == city) {
-            flag = true;
-        }
-    });
-
-    return flag;
-}
-
-CITIES = ["Sydney",
-    "Canberra"      ,
-    "Newcastle"     ,
-    "Broken Hill"   ,
-    "Melbourne"     ,
-    "Bendigo"       ,
-    "Adelaide"      ,
-    "Darwin"        ,
-    "Alice Springs" ,
-    "Perth"         ,
-    "Albany"        ,
-    "Kalgoorlie"    ,
-    "Broome"        ,
-    "Launceston"    ,
-    "Hobart"        ,
-    "Brisbane"      ,
-    "Mt Isa"        ,
-    "Rockhampton"   ,
-    "Cairns"        ,
-    "Pt Augusta"   ];

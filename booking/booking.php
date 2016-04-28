@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Xu</title>
-
     <?php
     require "../head.html";
     ?>

@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
     <?php
     require "../head.html";
     ?>
@@ -81,14 +78,64 @@ $_SESSION['email'] = $_REQUEST['email'];
 
 
 <div align="center">
+    <label for="form1">Complete Booking - Stage 2 of 4 - Payment Details</label>
     <form id="form1" method="get" onsubmit="return checkDate();" action="review.php">
         <table>
             <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <td>Given Name:</td>
+                <td><?php echo $_REQUEST['given_name'] ?></td>
             </tr>
+            <tr>
+                <td>Family Name:</td>
+                <td><?php echo $_REQUEST['family_name'] ?></td>
+            </tr>
+            <tr>
+                <td>Address Line 1:</td>
+                <td><?php echo $_REQUEST['address_line1'] ?></td>
+            </tr>
+            <?php
+            if (!empty($_REQUEST['address_line2'])){
+            echo '<tr><td>Address Line 2:</td><td>'.$_REQUEST['address_line1'].'</td></tr>';
+            }
+            ?>
+            <tr>
+                <td>Suburb:</td>
+                <td><?php echo $_REQUEST['suburb'] ?></td>
+            </tr>
+            <?php
+            if (!empty($_REQUEST['state'])) {
+                echo '<tr><td>State:</td><td>'.$_REQUEST['state'].'</td></tr>';
+            }
+            ?>
+            <?php
+            if (!empty($_REQUEST['postcode'])) {
+                echo '<tr><td>Postcode:</td><td>'.$_REQUEST['postcode'].'</td></tr>';
+            }
+            ?>
+            <tr>
+                <td>Country:</td>
+                <td><?php echo $_REQUEST['country'] ?></td>
+            </tr>
+            <tr>
+                <td>Email address:</td>
+                <td><?php echo $_REQUEST['email'] ?></td>
+            </tr>
+            <?php
+            if (!empty($_REQUEST['mobile_phone'])) {
+                echo '<tr><td>Mobile phone:</td><td>'.$_REQUEST['mobile_phone'].'</td></tr>';
+            }
+            ?>
+            <?php
+            if (!empty($_REQUEST['business_phone'])) {
+                echo '<tr><td>Business phone:</td><td>'.$_REQUEST['business_phone'].'</td></tr>';
+            }
+            ?>
+            <?php
+            if (!empty($_REQUEST['work_phone'])) {
+                echo '<tr><td>Work phone:</td><td>'.$_REQUEST['work_phone'].'</td></tr>';
+            }
+            ?>
+            <tr><td></td><td></td></tr>
             <tr>
                 <td>Credit Card type:</td>
                 <td><input id="credit_card_type" type="text" name="credit_card_type" required></td>

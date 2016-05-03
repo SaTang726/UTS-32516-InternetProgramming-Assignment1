@@ -23,7 +23,7 @@ echo '<div>';
         <th width="100px" >Child</th>
         <th width="100px" >Wheelchair</th>
         <th width="100px">Special Diet</th>
-        <th width="50px">Select to delete</th>
+        <th width="100px">Select to delete</th>
         </tr>
         <?php
         $total_cost = 0;

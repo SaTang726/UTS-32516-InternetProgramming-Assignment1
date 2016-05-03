@@ -14,8 +14,8 @@ require "../nav.html";
 //print_r($_REQUEST);
 $address = $_REQUEST['email'];
 $subject = $_REQUEST['subject'];
-//$message = $_REQUEST['content'];
-$message = "Your query is received.";
+$message = $_REQUEST['content'];
+//$message = "Your query is received.";
 
 $first_name = $_REQUEST['first_name'];
 $last_name = $_REQUEST['last_name'];

@@ -157,7 +157,7 @@ require "../nav.html";
                 <td></td>
             </tr>
             <tr>
-                <td style="color: #FF0000;">*</td>
+                <td style="color: #FF0000; text-align: right">*</td>
                 <td>Means compulsory.</td>
             </tr>
         </table>

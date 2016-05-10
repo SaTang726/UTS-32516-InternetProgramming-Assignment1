@@ -46,11 +46,14 @@
             //var today = new Date();
             //var current_month = today.getMonth() + 1;
 
-            if (year <= 11) {
+            if (year == 16) {
                 if (month <= 4) {
                     alert("Your credit card is expired.");
                     return false;
                 }
+            } else if (year <= 15) {
+                alert("Your credit card is expired.");
+                return false;
             }
 
             return true;

@@ -51,14 +51,14 @@ function customedValidator() {
     }, "Need a valid 12 card numbers.");
 
     jQuery.validator.addMethod("isMonth", function (value, element) {
-        var reg = /^([1-9]|(10|11|12))$/;
+        var reg = /^((0?[1-9])|(10|11|12))$/;
         return this.optional(element) || (reg.test(value));
     }, "Need valid month (1 ~ 12).");
 
     jQuery.validator.addMethod("isYear", function (value, element) {
-        var reg = /^((1[1-9])|([2-9][0-9]))$/;
+        var reg = /^\d{2}$/;
         return this.optional(element) || (reg.test(value));
-    }, "Need valid year (11 ~ 99).");
+    }, "Need valid year (00 ~ 99).");
 
     jQuery.validator.addMethod("isSecurityCode", function (value, element) {
         var reg = /^[0-9]{3}$/;

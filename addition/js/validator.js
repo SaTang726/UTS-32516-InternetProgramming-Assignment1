@@ -56,9 +56,9 @@ function customedValidator() {
     }, "Need valid month (1 ~ 12).");
 
     jQuery.validator.addMethod("isYear", function (value, element) {
-        var reg = /^((1[6-9])|([2-9][0-9]))$/;
+        var reg = /^((1[1-9])|([2-9][0-9]))$/;
         return this.optional(element) || (reg.test(value));
-    }, "Need valid year (16 ~ 99).");
+    }, "Need valid year (11 ~ 99).");
 
     jQuery.validator.addMethod("isSecurityCode", function (value, element) {
         var reg = /^[0-9]{3}$/;

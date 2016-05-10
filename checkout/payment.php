@@ -43,11 +43,11 @@
             var year = document.getElementById("credit_card_expire_year").value.trim();
             var month = document.getElementById("credit_card_expire_month").value.trim();
 
-            var today = new Date();
-            var current_month = today.getMonth() + 1;
+            //var today = new Date();
+            //var current_month = today.getMonth() + 1;
 
-            if (year == 16) {
-                if (current_month >= month) {
+            if (year <= 11) {
+                if (month <= 4) {
                     alert("Your credit card is expired.");
                     return false;
                 }

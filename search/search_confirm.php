@@ -23,19 +23,23 @@
             });
 
             var out = document.getElementById("output");
-            var button = document.getElementById("button");
-            if (total == 0) {
-                out.innerText = "Please select at least 1 seat.";
-                if (!button.disabled) {
-                    button.disabled = true;
-                }
-            } else {
-                out.innerText = "You have select " + total + " seat.";
-                if (button.disabled) {
-                    button.disabled = false;
-                }
-            }
+            out.innerText = "You have select " + total + " seat.";
+        }
 
+        function checkNum() {
+            var total = 0;
+            $("input[name='select[]']").each(function () {
+                if (this.checked) {
+                    total++;
+                }
+            });
+
+            if (total == 0) {
+                alert("Please select at least 1 seat.");
+                return false;
+            } else {
+                return true;
+            }
         }
     </script>
 </head>
@@ -53,7 +57,7 @@ $_SESSION['choose_flight'] = $choose_checkbox;
 ?>
 
 <div align="center">
-    <form method="get" action="search_finalize.php">
+    <form method="get" action="search_finalize.php" onsubmit="return checkNum();">
         <table>
             <tr>
             <th width="80px">Seat No.</th>
@@ -86,7 +90,7 @@ $_SESSION['choose_flight'] = $choose_checkbox;
         <div>
             <p id="output">Please select at least 1 seat.</p>
         </div>
-        <input id="button" disabled="disabled" type="submit" value="Add to Bookings"/>
+        <input id="button" type="submit" value="Add to Bookings"/>
     </form>
 </div>
 
